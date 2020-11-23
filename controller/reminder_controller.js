@@ -4,6 +4,7 @@ let database = require("../database");
 let remindersController = {
   // Show a list of reminders
   list: (req, res) => {
+    res.locals.page = "list"
     res.render('reminder/index', { reminders: database.cindy.reminders })
   },
 
