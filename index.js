@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
+const session = require("cookie-seesion")
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -13,6 +14,13 @@ app.use(ejsLayouts);
 app.set("view engine", "ejs");
 
 // Site Routes start here
+
+//Cookie session
+app.use(session({
+  name: 'session',
+  maxAge: 5*60*60*1000,
+  keys: ["HeLlOThiSaKEy"]
+}))
 
 // Get a list of all reminders
 app.get("/reminders", reminderController.list)
