@@ -1,16 +1,25 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
 
+
     <div class="navbar-header">
       <%= locals.page == "list" ? <a class="navbar-brand" href="#" style="background-color:black;">Reminder List</a> : <a class="navbar-brand" href="#">Reminder List</a> %>
     </div>
-
+    <button class='navbar-toggler' type = 'button' data-toggle = 'collapse' data-target='#navbarNavAltMarkup' aria-controls= 'navbar'>
+      <span class='navbar-toggler-icon'></span>
+    </button>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     <%= if locals.page == "login" { document.getElementByID("bs-example-navbar-collapse-1").style.display = "none"; } %>
-      <ul class="nav navbar-nav">
-        <li><a href="/reminders">List All</a></li>
-        <li><a href="/reminder/new">Create</a></li>
-      </ul>
+     <% if (!locals.page) {%>
+    <div class = 'collapse navbar-collapse' id = 'navbarNavAltMarkup'>
+      <div class='navbar-nav'> 
+        <a class = 'nav-item nav-link <%= locals.pageTitle == 'list' ? 'active': null %>' href='/reminders'>Reminder List</a>
+        <a class = 'nav-item nav-link <%= locals.pageTitle == 'create' ? 'active': null %>' href='/reminder/new'>Create</a>
+      </div>
     </div>
+  >%}
+     
+     
+     
+     locals.page == "login" { document.getElementByID("bs-example-navbar-collapse-1").style.display = "none"; } %>
   </div>
 </nav>
