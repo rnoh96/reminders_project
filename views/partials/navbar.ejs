@@ -6,6 +6,7 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <%= if locals.page == "login" { document.getElementByID("bs-example-navbar-collapse-1").style.display = "none"; } %>
       <ul class="nav navbar-nav">
         <li><a href="/reminders">List All</a></li>
         <li><a href="/reminder/new">Create</a></li>
