@@ -92,7 +92,7 @@ let remindersController = {
 
   // get login page
   login: (req, res) => {
-    res.redirect('/login')
+    res.r('/login')
   }
 }
 

@@ -40,7 +40,7 @@ app.post("/reminder/update/:id", reminderController.update) // Edit the reminder
 app.post("/reminder/delete/:id", reminderController.delete)
 
 // Login page
-app.get("/login")
+app.get("/login", reminderController.login)
 
 
 app.listen(3000, function () {
