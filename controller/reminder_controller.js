@@ -91,8 +91,17 @@ let remindersController = {
   },
 
   // get login page
+  loginPage: (req, res) => {
+    res.render('reminder/login')
+  },
+
   login: (req, res) => {
-    res.r('/login')
+    let loginInfo = req.params.body
+    if(database.keys().includes(loginInfo.username)) {
+      if(loginInfo.password == database[loginInfo.username].password) {
+        res.redirect('/reminders')
+      }
+    }
   }
 }
 
