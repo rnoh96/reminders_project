@@ -39,6 +39,9 @@ app.post("/reminder/update/:id", reminderController.update) // Edit the reminder
 // Delete a reminder
 app.post("/reminder/delete/:id", reminderController.delete)
 
+// Login page
+app.get("/login")
+
 
 app.listen(3000, function () {
   console.log("Server running. Visit: localhost:3000/reminders in your browser 🚀");

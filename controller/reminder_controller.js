@@ -88,6 +88,11 @@ let remindersController = {
     //removes index from the list
       database.cindy.reminders.splice(deleteIndex,1);
       res.redirect('/reminders');
+  },
+
+  // get login page
+  login: (req, res) => {
+    res.redirect('/login')
   }
 }
 
