@@ -11,7 +11,13 @@ let authController = {
   },
 
   loginSubmit: (req, res) => {
-    // implement
+    let loginInfo = req.body
+    if(database.cindy.email == loginInfo.email) {
+      if(database.cindy.password == loginInfo.password) {
+        res.redirect('/reminders')
+      }
+    }
+
   },
 
   registerSubmit: (req, res) => {

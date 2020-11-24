@@ -89,20 +89,6 @@ let remindersController = {
       database.cindy.reminders.splice(deleteIndex,1);
       res.redirect('/reminders');
   },
-
-  // get login page
-  loginPage: (req, res) => {
-    res.render('reminder/login')
-  },
-
-  login: (req, res) => {
-    let loginInfo = req.params.body
-    if(database.keys().includes(loginInfo.username)) {
-      if(loginInfo.password == database[loginInfo.username].password) {
-        res.redirect('/reminders')
-      }
-    }
-  }
 }
 
 module.exports = remindersController;

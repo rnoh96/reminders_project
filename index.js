@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
+const authController = require("./controller/auth_controller")
 const session = require("cookie-session")
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -40,7 +41,8 @@ app.post("/reminder/update/:id", reminderController.update) // Edit the reminder
 app.post("/reminder/delete/:id", reminderController.delete)
 
 // Login page
-app.get("/login", reminderController.loginPage)
+app.get("/login", authController.login)
+app.post("/auth/login",authController.loginSubmit)
 
 
 app.listen(3000, function () {
