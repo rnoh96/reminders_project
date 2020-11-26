@@ -11,7 +11,12 @@ let authController = {
   },
 
   loginSubmit: (req, res) => {
-    // implement
+    if (users[req.body.username] && users[req.body.username].password === req.body.password) {
+      req.session['user']= req.body.username;
+      res.redirect('/me');
+    } else {
+      res.redirect('/');
+    }
   },
 
   registerSubmit: (req, res) => {
