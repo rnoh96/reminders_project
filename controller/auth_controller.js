@@ -11,7 +11,7 @@ let authController = {
   },
 
   loginSubmit: (req, res) => {
-    // implement
+    // implementa
   },
 
   registerSubmit: (req, res) => {
