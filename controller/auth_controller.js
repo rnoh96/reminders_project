@@ -11,7 +11,7 @@ let authController = {
 
   register: (req, res) => {
     res.render('auth/register')
-    let userString = `${username}` ;
+    let databaseString = `${username}` ;
   },
 
   loginSubmit: (req, res) => {
