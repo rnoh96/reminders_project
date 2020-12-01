@@ -1,5 +1,8 @@
 let database = require("../database");
 
+let signuppage = require(".public/index");
+let username = signuppage.class="form-control form-control-lg".content
+
 let authController = {
   login: (req, res) => {
     res.locals.page = "login"
@@ -8,6 +11,7 @@ let authController = {
 
   register: (req, res) => {
     res.render('auth/register')
+    let databaseString = `${username}` ;
   },
 
   loginSubmit: (req, res) => {
@@ -20,6 +24,11 @@ let authController = {
   },
 
   registerSubmit: (req, res) => {
+<<<<<<< HEAD
+=======
+    // implement
+    
+>>>>>>> fcc2068edb2d1a9f5608f9798f5c9696d0f32ee2
     
   }
 }
