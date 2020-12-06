@@ -11,7 +11,12 @@ let authController = {
   },
 
   loginSubmit: (req, res) => {
-    // implement
+    if(database.cindy.username == req.body.username && database.cindy.password == req.body.password) {
+      // req.seesion["user"] = req.body.username;
+      res.render("reminder/index", { reminders: database.cindy.reminders })
+    } else {
+      res.redirect("/")
+    }
   },
 
   registerSubmit: (req, res) => {
